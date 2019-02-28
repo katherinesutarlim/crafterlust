@@ -1,0 +1,890 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.body {
+  overflow: visible;
+}
+
+.hero {
+  background-image: url("images/summer-hero.jpg");
+  background-size: cover;
+  background-position: bottom;
+  width: 100%;
+  height: 100vh;
+}
+
+header {
+  position: sticky;
+  display: grid;
+  grid-template-columns: 40px 150px auto 570px 40px;
+  grid-template-rows: 20px auto;
+}
+
+header .logo {
+  float: left;
+  grid-column: 2;
+  grid-row: 2;
+  width: 150px;
+}
+
+header menu  {
+  float: right;
+  margin-top: 10px;
+  grid-column:4;
+  grid-row: 2;
+}
+
+header menu .menu-options {
+  float: right;
+}
+
+header menu .menu-small {
+  float: right;
+  max-width: 0;
+  display: none;
+}
+
+header .search {
+  float: right;
+  margin-top: 5px;
+  margin-right: 20px;
+}
+
+header .search input {
+  width: 135px;
+  border: none;
+  border-bottom: 1px solid #464646;
+  background: none;
+  font-family: 'Raleway', sans-serif;
+  font-size: 15px;
+  font-variant-caps: all-small-caps;
+  line-height: 20px;
+}
+
+header .search button {
+  position: relative;
+  left: -5px;
+  height: 20px;
+  border: none;
+  border-bottom: 1px solid #464646;
+  background: none;
+}
+
+header .search button i {
+  font-size: 12px;
+  color: #464646;
+}
+
+header ul {
+  float:right;
+  width: 391px;
+  height: 30px;
+  list-style: none;
+  list-style-position: outside;
+  font-family: 'Raleway', sans-serif;
+  font-variant-caps: all-small-caps;
+  line-height: 30px;
+}
+
+header ul li {
+  float: left;
+}
+
+header ul .has-right {
+  margin-right: 8%
+}
+
+header ul li a {
+  color: #464646;
+  text-decoration: none;
+}
+
+header ul li ul {
+  display: none;
+  background: rgba(255,255,255,0.9);
+  width: 85px;
+  padding: 5px 15px;
+}
+
+header ul li a:hover {
+  color: #9b9b9b;
+  text-decoration: none;
+}
+
+header ul li:hover ul {
+  display: block;
+  position: absolute;
+}
+
+header ul li:hover ul li {
+  float: none;
+  position: relative;
+}
+
+header ul li:hover ul li ul{
+  display: none;
+}
+
+header ul li:hover ul li:hover ul{
+  display: block;
+  position: absolute;
+  left: 100px;
+  top: -5px;
+}
+
+@media (max-width: 839px) {
+  header {
+    grid-template-columns: 40px 150px auto 40px;
+  }
+
+  header menu {
+    grid-column: 3;
+  }
+
+  header menu .menu-options {
+    position: relative;
+    width: 0px;
+  }
+
+  header menu .menu-options > ul {
+    max-width: 0px;
+    display: none;
+  }
+
+  header menu .menu-options .menu-small {
+    float: right;
+    max-width: 30px;
+    margin-top: 6px;
+    display: block;
+    font-size: 20px;
+    color: #464646;
+  }
+
+  header menu .menu-options:hover > ul {
+    position: absolute;
+    top: 26px;
+    right: 0px;
+    display: block;
+    max-width: 80px;
+    text-align: right;
+  }
+
+  header menu .menu-options:hover > ul > li {
+    float: none;
+    max-width: 100px;
+    margin: 0;
+    padding: 0px 10px;
+    background: white;
+  }
+
+  header menu .menu-options:hover > ul > li ul {
+    display: none;
+  }
+}
+
+@media (max-width: 435px) {
+  header {
+    grid-template-columns: 40px auto 30px 40px;
+  }
+
+  header .search {
+    display: none;
+  }
+}
+
+@media (max-width: 259px) {
+  header .logo {
+    width: 100%;
+  }
+
+  header menu .menu-small {
+    margin-top: 0;
+
+  }
+}
+
+.hero .hero-text {
+  display: grid;
+  margin-top: 15vh;
+  grid-template-columns: 47.5% auto 40px;
+}
+
+.hero h1{
+  grid-column: 2;
+  font-family: 'Pacifico', cursive;
+  font-weight: normal;
+  font-size: 55px;
+}
+
+.hero h3 {
+  grid-column: 2;
+  margin-top: 20px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: normal;
+  font-size: 25px;
+  line-height: 40px;
+}
+
+.hero .button {
+  grid-column: 2;
+
+  width: 240px;
+  height: 60px;
+  border-radius: 10px;
+  background-color: #ff9d10;
+
+  margin-top: 50px;
+  color: white;
+  font-family: 'Raleway', sans-serif;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 60px;
+  text-decoration: none;
+  text-align: center;
+}
+
+@media (max-width: 984px) {
+  .hero .hero-text {
+    margin-top: 7.5vh;
+  }
+
+  .hero .hero-text h1 {
+    line-height: 75px;
+  }
+}
+
+@media (max-width: 585px) {
+  .hero {
+    background-image: url("images/summer-hero-small.jpg");
+  }
+  .hero .hero-text {
+    grid-template-columns: 40px auto 40px;
+    padding-top: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    text-align: center;
+  }
+  .hero .hero-text h1 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    margin-left: 50px;
+  }
+
+  .hero .hero-text .button {
+    margin: 40px auto;
+  }
+}
+
+@media (max-width: 340px) {
+  .hero .hero-text h1 {
+    margin-top: 30px;
+    font-size: 40px;
+    line-height: 60px;
+  }
+
+  .hero .hero-text h3 {
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  .hero .hero-text .button {
+    margin-top: 30px;
+    margin-bottom: 50px;
+    width: 150px;
+    height: 40px;
+    font-size: 20px;
+    line-height: 40px;
+  }
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 10% auto 10%;
+  width: 100%;
+}
+
+.main .search {
+  display: none;
+}
+
+@media (max-width: 435px) {
+  .main .search {
+    display: block;
+    grid-column: 2;
+    margin: 40px auto 0;
+  }
+
+  .main .search input {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border: 1px solid #464646;
+    border-right: none;
+    width: 70%;
+    font-size: 15px;
+    padding: 5px 10px;
+  }
+
+  .main .search button {
+    position: relative;
+    left: -5px;
+    top: -1px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: white;
+    border: 1px solid #464646;
+    border-left: none;
+    height: 29px;
+    width: 30px;
+  }
+}
+
+@media (max-width: 332px) {
+  .main hr {
+    display: none;
+    width: 0;
+  }
+
+  .main h2 {
+    grid-column: 2;
+  }
+}
+
+.section-head {
+  margin: 40px 0px 30px;
+  grid-column: 2;
+  display: grid;
+}
+
+.tp {
+  grid-template-columns: 1fr 200px 1fr;
+}
+
+.section-head hr {
+  float: left;
+  height: 0;
+  margin-top: 15px;
+}
+
+.section-head hr .left {
+  grid-column: 1;
+}
+
+.section-head hr .right {
+  grid-column: 3;
+}
+
+.section-head h2 {
+  float: left;
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+}
+
+.tp h2{
+  width: 200px;
+}
+
+.cards {
+  grid-column: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+  margin-bottom: 10px;
+}
+
+.card .image {
+  width: 100%;
+  background-size: cover;
+}
+
+.card .image::after {
+  padding-bottom: 100%;
+  content: "";
+  display: block;
+}
+
+.card .title {
+  margin-top: 20px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.card .price {
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+  line-height: 30px;
+}
+
+#tp-1 .image {
+  background-image: url("images/tp-1.jpg");
+}
+
+#tp-2 .image {
+  background-image: url("images/tp-2.jpg");
+}
+
+#tp-3 .image {
+  background-image: url("images/tp-3.jpg");
+}
+
+#tp-4 .image {
+  background-image: url("images/tp-4.jpg");
+  background-size: 150% 150%;
+  background-position: center;
+}
+
+@media (max-width: 767px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  #tp-4 {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  #tp-4 {
+    display: block;
+  }
+}
+
+@media (max-width: 276px) {
+  .cards {
+    display: block;
+  }
+}
+
+.tt {
+  grid-template-columns: 1fr 250px 1fr;
+}
+
+.tt h2{
+  width: 250px;
+}
+
+@media (max-width: 328px) {
+  .tt {
+    display: block;
+  }
+  .tt h2 {
+    width: 100%;
+  }
+}
+
+.trending-grid {
+  display: grid;
+  min-height: 87.5vh;
+  grid-column: 2;
+  grid-template-columns: repeat(5,1fr);
+  grid-template-rows: repeat(4,1fr) 40px;
+  grid-template-areas:
+  "ocean ocean ocean animal animal"
+  "sport sport tropical tropical tropical"
+  "sport sport food food party"
+  "floral floral food food party";
+  grid-gap: 15px;
+}
+
+@media (max-width: 767px) {
+  .trending-grid {
+    grid-template-areas:
+    "ocean ocean ocean animal animal"
+    "sport sport tropical tropical tropical"
+    "sport sport food food food"
+    "floral floral floral party party";
+  }
+}
+
+@media (max-width: 554px) {
+  .trending-grid {
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(7,1fr) 40px;
+    grid-template-areas:
+    "ocean"
+    "animal"
+    "sport"
+    "tropical"
+    "food"
+    "floral"
+    "party";
+  }
+}
+
+.trending-grid div {
+  background-size: cover;
+}
+
+.trending-grid div .hover {
+  width: 100%;
+  height: 100%;
+  display: none;
+  font-family: "Raleway", sans-serif;
+  font-size: 25px;
+  text-align: center;
+}
+
+.trending-grid div .hover::before {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  content: "";
+}
+
+.trending-grid div:hover .hover{
+  display: block;
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+.ocean {
+  grid-area: ocean;
+  background-image: url("images/ocean.jpg");
+  background-position: center;
+}
+
+.tropical {
+  grid-area: tropical;
+  background-image: url("images/tropical.jpeg");
+  background-position: center;
+}
+
+.animal {
+  grid-area: animal;
+  background-image: url("images/animal.jpg");
+  background-position: center;
+}
+
+.sport {
+  grid-area: sport;
+  background-image: url("images/sport.jpg");
+  background-position: center;
+}
+
+.food {
+  grid-area: food;
+  background-image: url("images/food.jpg");
+}
+
+.floral {
+  grid-area: floral;
+  background-image: url("images/floral.jpg");
+  background-position: bottom;
+}
+
+.party {
+  grid-area: party;
+  background-image: url("images/party.jpg");
+}
+
+.whatwedo {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  display: grid;
+  grid-template-columns: 10% auto 10%;
+  background-image: url("images/whatwedo.jpg");
+  background-size: cover;
+  background-position: bottom;
+  width: 100%;
+  height: 100vh;
+}
+
+.whatwedo .text {
+  grid-column: 2;
+  text-align: center;
+}
+
+.whatwedo h1 {
+  margin-top: 40px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 55px;
+  font-variant-caps: all-small-caps;
+  letter-spacing: 5px;
+  text-align: center;
+}
+
+.whatwedo h3 {
+  margin-top: 20px;
+  margin-bottom: 25px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: normal;
+  font-size: 25px;
+  line-height: 40px;
+  text-align: center;
+}
+
+.whatwedo .button {
+  width: 240px;
+  height: 60px;
+  border-radius: 10px;
+  background-color: #ffa197;
+
+  margin: 0 auto;
+  padding: 10px 30px;
+  color: white;
+  font-family: 'Raleway', sans-serif;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 60px;
+  text-decoration: none;
+  text-align: center;
+}
+
+@media (max-width: 389px) {
+  .whatwedo h1 {
+    font-size: 40px;
+    line-height: 50px;
+  }
+
+  .whatwedo h3 {
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  .whatwedo .text .button {
+    margin-top: 30px;
+    margin-bottom: 50px;
+    width: 150px;
+    height: 40px;
+    font-size: 20px;
+    line-height: 40px;
+  }
+}
+
+footer {
+  display: grid;
+  grid-template-columns: 10% 220px 180px auto 300px 10%;
+  grid-template-rows: 50px auto 50px;
+  grid-template-areas:
+  ". . . . . ."
+  ". about info newsletter logo ."
+  ". . . . . .";
+  background-color: #393939;
+}
+
+footer h4 {
+  margin-bottom: 10px;
+  font-family: 'Raleway', sans-serif;
+  font-variant-caps: all-small-caps;
+  font-size: 18px;
+  color: white;
+}
+
+footer ul {
+  list-style: none;
+  font-family: 'Raleway', sans-serif;
+  font-size: 12px;
+  line-height: 25px;
+}
+
+footer li a {
+  text-decoration: none;
+  color: white;
+}
+
+.footer-about {
+  grid-area: about;
+  float: left;
+}
+
+.footer-info {
+  grid-area: info;
+}
+
+.newsletter-subscribe {
+  grid-area: newsletter;
+  font-family: "Raleway", sans-serif;
+  font-size: 14px;
+  color: white;
+}
+
+.newsletter-subscribe form {
+  margin: 15px 0;
+  width: 100%;
+}
+
+.newsletter-subscribe input[type="text"] {
+  border: none;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  padding: 5px 10px;
+  margin: 0px;
+  font-family: "Raleway", sans-serif;
+  font-size: 13px;
+  width: calc(90% - 105px);
+}
+
+.newsletter-subscribe button {
+  position: relative;
+  left: -5px;
+  border: none;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 5px 10px;
+  margin: 0px;
+  font-family: "Raleway", sans-serif;
+  font-size: 13px;
+}
+.newsletter-subscribe input[type="checkbox"] {
+  margin-top: 20px;
+  margin-right: 10px;
+  float: left;
+}
+
+.newsletter-subscribe .tnc {
+  margin-top: 17px;
+  margin-left: 21px;
+  font-size: 13px;
+  line-height: 20px;
+}
+
+.newsletter-subscribe .tnc a {
+  color: white;
+}
+
+.footer-logo {
+  grid-area: logo;
+  text-align: right;
+}
+
+.footer-logo img {
+  width: 150px;
+}
+
+.social-media {
+  margin-top: 5px;
+  margin-right: 10px;
+}
+
+.social-media i{
+  font-size: 30px;
+  color: white;
+  margin-left: 15px;
+}
+
+footer h5 {
+  margin-top: 22px;
+  margin-right: 5px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  color: white;
+}
+
+@media (max-width: 1189px) {
+  footer {
+    grid-template-columns: 10% 200px 150px auto 250px 10%;
+  }
+
+  .newsletter-subscribe input[type="text"] {
+    border-radius: 5px;
+    width: 90%
+  }
+
+  .newsletter-subscribe button {
+    border-radius: 5px;
+    margin-left: 5px;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 1015px) {
+  footer {
+    grid-template-columns: 10% 200px auto auto 10%;
+    grid-template-rows: 50px 120px auto 50px;
+    grid-template-areas:
+    ". . . . ."
+    ". newsletter newsletter newsletter ."
+    ". about info logo ."
+    ". . . . .";
+  }
+
+  .newsletter-subscribe input[type="text"] {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    width: calc(100% - 106px);
+    float: left;
+  }
+
+  .newsletter-subscribe input[type="checkbox"] {
+    margin-top: 14px;
+    float: left;
+  }
+
+  .newsletter-subscribe .tnc {
+    margin-top: 20px;
+  }
+
+  .newsletter-subscribe button {
+    left: 0;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    margin: 0;
+    float: left;
+  }
+}
+
+@media (max-width: 624px) {
+  footer {
+    grid-template-columns: 10% 150px auto auto 10%;
+  }
+}
+
+@media (max-width: 554px) {
+  footer {
+    grid-template-columns: 10% 1fr 1fr 10%;
+    grid-template-rows: 50px 1fr 20px 1.6fr 1fr 50px;
+    grid-template-areas:
+    ". . . ."
+    ". newsletter newsletter ."
+    ". . . ."
+    ". about info ."
+    ". logo logo ."
+    ". . . .";
+  }
+
+  .footer-about {
+    grid-column: 2;
+    text-align: center;
+  }
+
+  .footer-info {
+    grid-column: 3;
+    text-align: center;
+  }
+
+  .footer-logo {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .footer-logo img {
+    width: 40%;
+    float: left;
+  }
+
+  .social-media {
+    display: grid;
+    margin-top: 10px;
+    width: 50%;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .social-media i {
+    margin: 0;
+    font-size: 30px;
+    text-align: right;
+  }
+
+  footer h5 {
+    margin-top: 30px;
+    width: 100%;
+    text-align: center;
+  }
+}
